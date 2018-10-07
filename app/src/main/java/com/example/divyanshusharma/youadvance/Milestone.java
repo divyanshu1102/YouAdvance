@@ -5,14 +5,26 @@ import android.graphics.Color;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Objects;
+import java.util.Set;
 
 public class Milestone {
 
     Date start, end;            //date range
     String milestone_text;      //what is the milestone about
-    String[] milestone_tags;    // tags associated with the milestone
+    Set<Integer> milestone_tags;    // tags associated with the milestone
 
-    public Milestone(Date start, Date end, String milestone_text, String[] milestone_tags) {
+    public Milestone(){}
+
+    public Milestone(Milestone newMile)
+    {
+        this.start = newMile.getStart();
+        this.end = newMile.getEnd();
+        this.milestone_text = newMile.getMilestone_text();
+        this.milestone_tags = newMile.getMilestone_tags();
+
+    }
+
+    public Milestone(Date start, Date end, String milestone_text, Set<Integer> milestone_tags) {
         this.start = start;
         this.end = end;
         this.milestone_text = milestone_text;
@@ -31,7 +43,7 @@ public class Milestone {
         return milestone_text;
     }
 
-    public String[] getMilestone_tags() {
+    public Set<Integer> getMilestone_tags() {
         return milestone_tags;
     }
 
@@ -47,7 +59,7 @@ public class Milestone {
         this.milestone_text = milestone_text;
     }
 
-    public void setMilestone_tags(String[] milestone_tags) {
+    public void setMilestone_tags(Set<Integer> milestone_tags) {
         this.milestone_tags = milestone_tags;
     }
 
@@ -61,5 +73,5 @@ public class Milestone {
                 Objects.equals(milestone_text, milestone.milestone_text);
     }
 
-    
+
 }

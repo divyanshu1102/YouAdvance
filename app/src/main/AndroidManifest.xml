@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AddMilestone" />
+        <activity android:name=".Graph_View"></activity>
     </application>
 
 </manifest>
